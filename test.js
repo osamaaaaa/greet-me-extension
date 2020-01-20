@@ -32,7 +32,7 @@ describe('Extension UI Testing', function() {
 async function boot() {
   browser = await puppeteer.launch({
     headless: false, // extension are allowed only in head-full mode
-    executablePath: process.env.PUPPETEER_EXEC_PATH,
+    // executablePath: process.env.PUPPETEER_EXEC_PATH,
     args: [
       `--disable-extensions-except=${extensionPath}`,
       `--load-extension=${extensionPath}`
