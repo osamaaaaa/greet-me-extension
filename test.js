@@ -35,7 +35,9 @@ async function boot() {
     // executablePath: process.env.PUPPETEER_EXEC_PATH,
     args: [
       `--disable-extensions-except=${extensionPath}`,
-      `--load-extension=${extensionPath}`
+      `--load-extension=${extensionPath}`,
+      '--no-sandbox',
+      '--disable-setuid-sandbox'
     ]
   });
 
