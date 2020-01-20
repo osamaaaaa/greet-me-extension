@@ -1,3 +1,3 @@
 # Greet Me Extension
 
-This is a sample chrome extension use dto experiment various stuff
+This is a sample chrome extension use to experiment various stuff
