@@ -1,0 +1,28 @@
+name: E2E
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      env:
+        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+      with:
+        node-version: ${{ matrix.node-version }}
+        args: install
+    - name: Test code
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        CI: 'true'
+      with:
+        args: npm test
