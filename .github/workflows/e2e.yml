@@ -19,7 +19,7 @@ jobs:
         PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
       with:
         node-version: ${{ matrix.node-version }}
-        args: npm ci
+        args: ci
     - name: Test code
       uses: mujo-code/puppeteer-headful@master
       env:
